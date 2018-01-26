@@ -29,6 +29,7 @@ import java.util.Currency;
 public class RNCriteoModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
+  private static EventService mCriteoEventService = null;
 
   public RNCriteoModule(ReactApplicationContext reactContext) {
     super(reactContext);
