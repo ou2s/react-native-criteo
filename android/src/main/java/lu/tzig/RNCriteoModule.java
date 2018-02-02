@@ -89,17 +89,17 @@ public class RNCriteoModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void criteoProductViewEvent(String id, double price, String currencyCode) {
+  public void criteoProductViewEvent(String identifier, double price, String currency) {
     if (mCriteoEventService != null) {
-      ProductViewEvent productViewEvent = new ProductViewEvent(id, price);
-      productViewEvent.setCurrency(Currency.getInstance(currencyCode));
+      ProductViewEvent productViewEvent = new ProductViewEvent(identifier, price);
+      productViewEvent.setCurrency(Currency.getInstance(currency));
 
       mCriteoEventService.send(productViewEvent);
     }
   }
 
   @ReactMethod
-  public void criteoProductListViewEvent(ReadableMap list, String currencyCode) {
+  public void criteoProductListViewEvent(ReadableMap list, String currency) {
     if (mCriteoEventService != null && list != null) {
       ArrayList<Product> productList = new ArrayList<>();
       ReadableMapKeySetIterator it = list.keySetIterator();
@@ -110,30 +110,30 @@ public class RNCriteoModule extends ReactContextBaseJavaModule {
         productList.add(product);
       }
       ProductListViewEvent productListViewEvent = new ProductListViewEvent(productList);
-      productListViewEvent.setCurrency(Currency.getInstance(currencyCode));
+      productListViewEvent.setCurrency(Currency.getInstance(currency));
       mCriteoEventService.send(productListViewEvent);
     }
   }
 
-  /* private WritableMap getProductParams(String id, double value) {
+  /* private WritableMap getProductParams(String identifier, double value) {
     WritableMap productMap = Arguments.createMap();
-    productMap.putString(ID, id);
+    productMap.putString(identifier, id);
     productMap.putDouble(VALUE, value);
   } */
 
   @ReactMethod
-  public void criteoBasketViewEvent(String id, double price, int quantity) {
+  public void criteoBasketViewEvent(String identifier, double price, int quantity, String currency) {
     if (mCriteoEventService != null) {
-      BasketProduct basketProduct = new BasketProduct(id, price, quantity);
+      BasketProduct basketProduct = new BasketProduct(identifier, price, quantity);
       BasketViewEvent basketViewEvent = new BasketViewEvent(basketProduct);
       mCriteoEventService.send(basketViewEvent);
     }
   }
 
   @ReactMethod
-  public void criteoTransactionConfirmationEvent(String timeStampId, String id, double price, int quantity) {
+  public void criteoTransactionConfirmationEvent(String timeStampId, String identifier, double price, int quantity, String currency) {
     if (mCriteoEventService != null) {
-      BasketProduct basketProduct = new BasketProduct(id, price, quantity);
+      BasketProduct basketProduct = new BasketProduct(identifier, price, quantity);
       TransactionConfirmationEvent transactionConfirmationEvent = new TransactionConfirmationEvent(timeStampId,
           basketProduct);
       mCriteoEventService.send(transactionConfirmationEvent);

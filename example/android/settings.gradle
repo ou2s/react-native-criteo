@@ -1,0 +1,5 @@
+rootProject.name = 'Example'
+include ':react-native-criteo'
+project(':react-native-criteo').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-criteo/android')
+
+include ':app'
