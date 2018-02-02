@@ -99,13 +99,13 @@ public class RNCriteoModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void criteoProductListViewEvent(ReadableMap list, String currency) {
+  public void criteoProductListViewEvent(ReadableMap list, double price, String currency) {
     if (mCriteoEventService != null && list != null) {
       ArrayList<Product> productList = new ArrayList<>();
       ReadableMapKeySetIterator it = list.keySetIterator();
       while (it.hasNextKey()) {
-        String id = it.nextKey();
-        Double price = list.getDouble(id);
+        String key = it.nextKey();
+        String id = list.getString(key);
         Product product = new Product(id, price);
         productList.add(product);
       }

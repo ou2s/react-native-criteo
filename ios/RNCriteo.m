@@ -61,7 +61,7 @@ RCT_EXPORT_METHOD(criteoProductViewEvent:(NSString *)eventId price:(double)price
     [[CRTOEventService sharedEventService] send:productView];
 }
 
-RCT_EXPORT_METHOD(criteoProductListViewEvent:(NSArray *)products currency:(NSString *)currency)
+RCT_EXPORT_METHOD(criteoProductListViewEvent:(NSArray *)products price:(double)price currency:(NSString *)currency)
 {
     // Create instances of CRTOProduct for the item shown to the user
     NSMutableArray *productsCRTO = [NSMutableArray array];
@@ -73,7 +73,7 @@ RCT_EXPORT_METHOD(criteoProductListViewEvent:(NSArray *)products currency:(NSStr
             continue;
         }
         CRTOProduct *product = [[CRTOProduct alloc] initWithProductId:identifier
-                                                                price:1];
+                                                                price:price];
         [productsCRTO addObject:product];
     }
     // Create an array of products
