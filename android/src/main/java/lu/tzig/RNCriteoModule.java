@@ -16,8 +16,8 @@ import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.bridge.ReadableMapKeySetIterator;
+import com.facebook.react.bridge.ReadableArray;
+
 import com.facebook.react.bridge.WritableMap;
 
 import org.apache.commons.lang3.StringUtils;
@@ -99,16 +99,16 @@ public class RNCriteoModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void criteoProductListViewEvent(ReadableMap list, double price, String currency) {
+  public void criteoProductListViewEvent(ReadableArray list, double price, String currency) {
     if (mCriteoEventService != null && list != null) {
       ArrayList<Product> productList = new ArrayList<>();
-      ReadableMapKeySetIterator it = list.keySetIterator();
-      while (it.hasNextKey()) {
-        String key = it.nextKey();
-        String id = list.getString(key);
+
+      for (int i = 0; i < list.size(); i++) {
+        String id = list.getString(i);
         Product product = new Product(id, price);
         productList.add(product);
       }
+
       ProductListViewEvent productListViewEvent = new ProductListViewEvent(productList);
       productListViewEvent.setCurrency(Currency.getInstance(currency));
       mCriteoEventService.send(productListViewEvent);
