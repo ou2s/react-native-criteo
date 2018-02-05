@@ -1,0 +1,6 @@
+framework module CriteoEventsSDK {
+  umbrella header "CriteoEventsSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

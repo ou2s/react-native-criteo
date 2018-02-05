@@ -1,6 +1,6 @@
 
 #import "RNCriteo.h"
-#import <CriteoAdvertiser/CriteoAdvertiser.h>
+#import <CriteoEventsSDK/CriteoAdvertiser.h>
 
 @implementation RNCriteo
 

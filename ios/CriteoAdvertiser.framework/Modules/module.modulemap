@@ -1,6 +1,0 @@
-framework module CriteoAdvertiser {
-  umbrella header "CriteoAdvertiser.h"
-
-  export *
-  module * { export * }
-}

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B3E7B58A1CC2AC0600A0062D /* RNCriteo.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCriteo.m */; };
-		D5AE530C2020D84700AF6DBC /* CriteoAdvertiser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5AE530B2020D84700AF6DBC /* CriteoAdvertiser.framework */; };
+		D50C892620286A730089B278 /* CriteoEventsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50C892520286A730089B278 /* CriteoEventsSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,7 @@
 		134814201AA4EA6300B7C361 /* libRNCriteo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCriteo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNCriteo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCriteo.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCriteo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCriteo.m; sourceTree = "<group>"; };
-		D5AE530B2020D84700AF6DBC /* CriteoAdvertiser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CriteoAdvertiser.framework; sourceTree = "<group>"; };
+		D50C892520286A730089B278 /* CriteoEventsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CriteoEventsSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5AE530C2020D84700AF6DBC /* CriteoAdvertiser.framework in Frameworks */,
+				D50C892620286A730089B278 /* CriteoEventsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 		D5AE528A2020B62C00AF6DBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5AE530B2020D84700AF6DBC /* CriteoAdvertiser.framework */,
+				D50C892520286A730089B278 /* CriteoEventsSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
